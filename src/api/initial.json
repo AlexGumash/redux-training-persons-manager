@@ -1,0 +1,20 @@
+{
+  "Евгений": {
+    "name": "Евгений",
+    "surname": "Кулажский",
+    "age": 20,
+    "skill": "no skill"
+  },
+  "Иван": {
+    "name": "Иван",
+    "surname": "Гумбин",
+    "age": 20,
+    "skill": "great skill"
+  },
+  "Леха": {
+    "name": "Леха",
+    "surname": "Гумбин",
+    "age": 18,
+    "skill": "awesome skill"
+  }
+}
