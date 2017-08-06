@@ -8,7 +8,7 @@ export const person = (state = initialState, action) => {
       state[action.person.name] = action.person;
       return { ...state };
     case actionTypes.DELETE_PERSON:
-      delete state[action.person.name];
+      delete state[action.person];
       return { ...state };
     case actionTypes.EDIT_PERSON:
       state[action.name] = action.person;

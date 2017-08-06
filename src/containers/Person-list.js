@@ -22,7 +22,8 @@ class PersonList extends React.Component {
               <Person obj={this.props.persons[item]} />
               <button
                 type="button"
-                onClick={() => this.deletePerson(this.props.persons[item])}
+                onClick={() =>
+                  this.deletePerson(Object.keys(this.props.persons)[index])}
               >
                 delete
               </button>
