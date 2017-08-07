@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import Person from "../components/Person.js";
 
-import store from "../reducers/persons.js";
+import store from "../reducers";
 import * as actionTypes from "../constants/actionTypes.js";
 
 class PersonList extends React.Component {
@@ -38,7 +38,7 @@ class PersonList extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    persons: state
+    persons: state.person
   };
 }
 

@@ -3,18 +3,21 @@
     "name": "Евгений",
     "surname": "Кулажский",
     "age": 20,
-    "skill": "no skill"
+    "skill": "no skill",
+    "salary": 0
   },
   "Иван": {
     "name": "Иван",
     "surname": "Гумбин",
     "age": 20,
-    "skill": "great skill"
+    "skill": "great skill",
+    "salary": 0
   },
   "Леха": {
     "name": "Леха",
     "surname": "Гумбин",
     "age": 18,
-    "skill": "awesome skill"
+    "skill": "awesome skill",
+    "salary": 0
   }
 }

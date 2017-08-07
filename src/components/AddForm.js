@@ -1,5 +1,5 @@
 import React from "react";
-import store from "../reducers/persons.js";
+import store from "../reducers/";
 
 import * as actionTypes from "../constants/actionTypes.js";
 
@@ -11,7 +11,8 @@ class AddForm extends React.Component {
         name: "",
         surname: "",
         age: "",
-        skill: ""
+        skill: "",
+        salary: ""
       }
     };
     this.personChangeHandle = this.personChangeHandle.bind(this);
@@ -27,7 +28,8 @@ class AddForm extends React.Component {
         name: "",
         surname: "",
         age: "",
-        skill: ""
+        skill: "",
+        salary: ""
       }
     });
   }

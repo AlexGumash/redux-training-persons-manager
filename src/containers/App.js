@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PersonList from "./PersonList";
 import AddBlock from "./AddBlock";
+import SalaryBlock from "./SalaryBlock";
 
 class App extends Component {
   render() {
@@ -8,6 +9,7 @@ class App extends Component {
       <div>
         <PersonList />
         <AddBlock />
+        <SalaryBlock />
       </div>
     );
   }

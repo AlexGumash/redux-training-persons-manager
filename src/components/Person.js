@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import store from "../reducers/persons.js";
+import store from "../reducers/";
 import { connect } from "react-redux";
 import * as actionTypes from "../constants/actionTypes.js";
 
@@ -13,9 +13,11 @@ class Person extends React.Component {
         name: props.obj.name,
         surname: props.obj.surname,
         age: props.obj.age,
-        skill: props.obj.skill
+        skill: props.obj.skill,
+        salary: props.obj.salary
       }
     };
+    this.personChangeHandle = this.personChangeHandle.bind(this);
   }
   editPerson(e) {
     store.dispatch({
@@ -27,39 +29,12 @@ class Person extends React.Component {
       isEditNow: !this.state.isEditNow
     });
   }
-  nameChangeHandler(e) {
+  personChangeHandle(e) {
     const { currentPerson } = this.state;
 
-    const name = e.target.value;
+    currentPerson[e.target.id] = e.target.value;
     this.setState({
-      currentPerson: { ...currentPerson, name }
-    });
-  }
-
-  surnameChangeHandler(e) {
-    const { currentPerson } = this.state;
-
-    const surname = e.target.value;
-    this.setState({
-      currentPerson: { ...currentPerson, surname }
-    });
-  }
-
-  ageChangeHandler(e) {
-    const { currentPerson } = this.state;
-
-    const age = e.target.value;
-    this.setState({
-      currentPerson: { ...currentPerson, age }
-    });
-  }
-
-  skillChangeHandler(e) {
-    const { currentPerson } = this.state;
-
-    const skill = e.target.value;
-    this.setState({
-      currentPerson: { ...currentPerson, skill }
+      currentPerson: { ...currentPerson }
     });
   }
   toggleEdit() {
@@ -76,7 +51,8 @@ class Person extends React.Component {
             ? this.props.obj.name
             : <input
                 value={this.state.currentPerson.name}
-                onChange={this.nameChangeHandler.bind(this)}
+                onChange={this.personChangeHandle}
+                id="name"
               />}
         </div>
         <div>
@@ -85,7 +61,8 @@ class Person extends React.Component {
             ? this.props.obj.surname
             : <input
                 value={this.state.currentPerson.surname}
-                onChange={this.surnameChangeHandler.bind(this)}
+                onChange={this.personChangeHandle}
+                id="surname"
               />}
         </div>
         <div>
@@ -94,7 +71,8 @@ class Person extends React.Component {
             ? this.props.obj.age
             : <input
                 value={this.state.currentPerson.age}
-                onChange={this.ageChangeHandler.bind(this)}
+                onChange={this.personChangeHandle}
+                id="age"
               />}
         </div>
         <div>
@@ -103,7 +81,8 @@ class Person extends React.Component {
             ? this.props.obj.skill
             : <input
                 value={this.state.currentPerson.skill}
-                onChange={this.skillChangeHandler.bind(this)}
+                onChange={this.personChangeHandle}
+                id="skill"
               />}
         </div>
         <button type="button" onClick={() => this.toggleEdit()}>

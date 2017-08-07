@@ -1,4 +1,3 @@
-import { createStore } from "redux";
 import * as actionTypes from "../constants/actionTypes.js";
 import initialState from "../api/initial";
 
@@ -18,6 +17,4 @@ export const person = (state = initialState, action) => {
   }
 };
 
-const store = createStore(person);
-
-export default store;
+export default person;
