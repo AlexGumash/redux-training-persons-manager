@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import PersonList from "./Person-list";
-import AddBlock from "./Add-block";
+import PersonList from "./PersonList";
+import AddBlock from "./AddBlock";
 
 class App extends Component {
   render() {

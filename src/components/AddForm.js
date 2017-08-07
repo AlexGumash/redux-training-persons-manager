@@ -14,10 +14,7 @@ class AddForm extends React.Component {
         skill: ""
       }
     };
-    this.nameChangeHandler = this.nameChangeHandler.bind(this);
-    this.surnameChangeHandler = this.surnameChangeHandler.bind(this);
-    this.ageChangeHandler = this.ageChangeHandler.bind(this);
-    this.skillChangeHandler = this.skillChangeHandler.bind(this);
+    this.personChangeHandle = this.personChangeHandle.bind(this);
   }
   addPerson(e) {
     e.preventDefault();
@@ -34,39 +31,12 @@ class AddForm extends React.Component {
       }
     });
   }
-  nameChangeHandler(e) {
+  personChangeHandle(e) {
     const { currentPerson } = this.state;
 
-    const name = e.target.value;
+    currentPerson[e.target.id] = e.target.value;
     this.setState({
-      currentPerson: { ...currentPerson, name }
-    });
-  }
-
-  surnameChangeHandler(e) {
-    const { currentPerson } = this.state;
-
-    const surname = e.target.value;
-    this.setState({
-      currentPerson: { ...currentPerson, surname }
-    });
-  }
-
-  ageChangeHandler(e) {
-    const { currentPerson } = this.state;
-
-    const age = e.target.value;
-    this.setState({
-      currentPerson: { ...currentPerson, age }
-    });
-  }
-
-  skillChangeHandler(e) {
-    const { currentPerson } = this.state;
-
-    const skill = e.target.value;
-    this.setState({
-      currentPerson: { ...currentPerson, skill }
+      currentPerson: { ...currentPerson }
     });
   }
   render() {
@@ -80,32 +50,36 @@ class AddForm extends React.Component {
           <input
             type="text"
             placeholder="Name"
-            onChange={this.nameChangeHandler}
+            onChange={this.personChangeHandle}
             value={this.state.currentPerson.name}
+            id="name"
             required
           />
           <br />
           <input
             type="text"
             placeholder="Surname"
-            onChange={this.surnameChangeHandler}
+            onChange={this.personChangeHandle}
             value={this.state.currentPerson.surname}
+            id="surname"
             required
           />
           <br />
           <input
             type="text"
             placeholder="Age"
-            onChange={this.ageChangeHandler}
+            onChange={this.personChangeHandle}
             value={this.state.currentPerson.age}
+            id="age"
             required
           />
           <br />
           <input
             type="text"
             placeholder="Skill"
-            onChange={this.skillChangeHandler}
+            onChange={this.personChangeHandle}
             value={this.state.currentPerson.skill}
+            id="skill"
             required
           />
           <br />

@@ -1,5 +1,5 @@
 import React from "react";
-import AddForm from "../components/Add-form.js";
+import AddForm from "../components/AddForm.js";
 
 class AddBlock extends React.Component {
   constructor() {
